@@ -1,71 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Multi-Section Landing Website with Modern Dark Theme",
+  "title": "Update contact information in ContactFooter",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Create a fully functional multi-section landing website with sticky navigation, hero, about, features, and contact sections",
+      "id": "REQ-3",
+      "summary": "Update ContactFooter component with placeholder-ready contact details including address, phone number, and email address",
       "acceptanceCriteria": [
-        "A sticky top navigation bar links to each page section (Home, About, Features, Contact).",
-        "A hero section is displayed prominently at the top with a headline, subheading, and a call-to-action button.",
-        "An About section describes the site's purpose.",
-        "A Features/Services section lists key highlights with icons or cards.",
-        "A Contact/Footer section includes placeholder contact info and copyright text.",
-        "The page is fully responsive on mobile and desktop."
+        "The ContactFooter component displays updated contact details including an address, phone number, and email address.",
+        "All contact fields are clearly labeled and visible in the contact info panel.",
+        "No outdated or placeholder contact values remain from the previous implementation.",
+        "The visual styling and layout of the ContactFooter remain consistent with the existing dark charcoal and amber theme."
       ],
       "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Replace existing content with a single-page layout that includes sticky navigation and four main sections: hero, about, features, and contact/footer. Wire the generated hero background image from frontend/public/assets/generated/hero-bg.dim_1440x800.png as the hero section background. Wire the generated logo mark from frontend/public/assets/generated/logo-mark.dim_128x128.png into the navigation bar. Ensure all sections are anchor-linked from the navigation."
-        },
-        {
-          "path": "frontend/src/components/Navigation.tsx",
-          "operation": "create",
-          "description": "Create a sticky top navigation bar component that displays the logo mark from frontend/public/assets/generated/logo-mark.dim_128x128.png and includes anchor links to Home, About, Features, and Contact sections. Implement smooth scroll behavior and highlight the active section."
-        },
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "create",
-          "description": "Create a hero section component with the generated background image from frontend/public/assets/generated/hero-bg.dim_1440x800.png. Include a headline, subheading, and call-to-action button. Ensure the section is fully responsive."
-        },
-        {
-          "path": "frontend/src/components/AboutSection.tsx",
-          "operation": "create",
-          "description": "Create an about section component that describes the site's purpose. Include a section heading and descriptive text. Ensure responsive layout."
-        },
-        {
-          "path": "frontend/src/components/FeaturesSection.tsx",
-          "operation": "create",
-          "description": "Create a features/services section component that displays key highlights using card components. Include icons or visual markers for each feature. Ensure a responsive grid layout."
-        },
         {
           "path": "frontend/src/components/ContactFooter.tsx",
-          "operation": "create",
-          "description": "Create a contact/footer section component with placeholder contact information, social links, and copyright text. Ensure responsive layout."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Apply a bold, modern visual theme with dark charcoal and warm amber color palette, clean typography, and consistent hover interactions",
-      "acceptanceCriteria": [
-        "The color scheme uses dark charcoal as the primary background and warm amber as the accent color.",
-        "Typography uses a clean sans-serif font applied consistently throughout.",
-        "Interactive elements (buttons, nav links, cards) have visible hover state transitions.",
-        "The visual theme is applied consistently across all sections."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Define CSS custom properties for the dark charcoal and warm amber color palette. Apply a clean sans-serif font family as the base typography. Add global styles for consistent spacing, hover transitions, and card shadows."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend the Tailwind theme with custom colors for dark charcoal (primary background) and warm amber (accent). Configure typography with a clean sans-serif font stack. Add custom utilities for card shadows and hover transitions."
+          "description": "Replace existing hardcoded contact details in the contact info panel with updated, realistic-looking placeholder values for address, phone number, and email address. Ensure all contact fields are clearly labeled with descriptive text (e.g., 'Address:', 'Phone:', 'Email:') and maintain the existing dark charcoal and amber visual theme. Preserve the current component structure, form functionality, social links, and site navigation links without modification."
         }
       ]
     }

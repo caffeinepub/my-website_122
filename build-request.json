@@ -1,59 +1,40 @@
 {
   "kind": "build_request",
-  "title": "Create a new website",
-  "projectName": "My Website",
+  "title": "Update contact information in ContactFooter",
+  "projectName": "Landing Site",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a fully functional multi-section landing website with a home hero section, an about section, a features/services section, and a contact/footer section. Each section should be clearly navigable via a sticky top navigation bar.",
+      "id": "REQ-3",
+      "text": "Update the contact information displayed in the ContactFooter component (frontend/src/components/ContactFooter.tsx) with placeholder-ready fields for address, phone number, and email address, clearly labeled and easy to locate for future edits. Replace any existing hardcoded contact details with updated, realistic-looking example values.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-7"
         ],
         "quotes": [
-          "create a website"
+          "change the contact info"
         ]
       },
       "acceptanceCriteria": [
-        "A sticky top navigation bar links to each page section (Home, About, Features, Contact).",
-        "A hero section is displayed prominently at the top with a headline, subheading, and a call-to-action button.",
-        "An About section describes the site's purpose.",
-        "A Features/Services section lists key highlights with icons or cards.",
-        "A Contact/Footer section includes placeholder contact info and copyright text.",
-        "The page is fully responsive on mobile and desktop."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Apply a bold, modern visual theme across the entire site using a dark charcoal and warm amber color palette, clean sans-serif typography, generous whitespace, and subtle card shadows. The style should feel professional and contemporary, with consistent spacing and hover interactions on interactive elements.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The color scheme uses dark charcoal as the primary background and warm amber as the accent color.",
-        "Typography uses a clean sans-serif font applied consistently throughout.",
-        "Interactive elements (buttons, nav links, cards) have visible hover state transitions.",
-        "The visual theme is applied consistently across all sections."
+        "The ContactFooter component displays updated contact details including an address, phone number, and email address.",
+        "All contact fields are clearly labeled and visible in the contact info panel.",
+        "No outdated or placeholder contact values remain from the previous implementation.",
+        "The visual styling and layout of the ContactFooter remain consistent with the existing dark charcoal and amber theme."
       ]
     }
   ],
-  "constraints": [],
+  "constraints": [
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/main.tsx.",
+    "Preserve the existing visual theme (dark charcoal + warm amber palette)."
+  ],
   "nonGoals": [
-    "User authentication or login functionality",
-    "Backend data storage or dynamic content",
-    "E-commerce or payment processing",
-    "Blog or CMS functionality"
+    "Adding a backend contact form submission handler.",
+    "Changing the layout or structure of the ContactFooter beyond updating contact details.",
+    "Adding new sections or features to the site."
   ],
   "imageRequirements": {
-    "required": [
-      "Abstract dark charcoal hero background with warm amber geometric light streaks and subtle texture (hero-bg.dim_1440x800.png)",
-      "Minimal amber-toned abstract logo mark with clean geometric shapes (logo-mark.dim_128x128.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

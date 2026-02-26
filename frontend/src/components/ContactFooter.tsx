@@ -10,9 +10,9 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: Mail, label: 'hello@luminary.io' },
-  { icon: Phone, label: '+1 (555) 000-1234' },
-  { icon: MapPin, label: 'San Francisco, CA' },
+  { icon: Mail, label: 'contact@luminary.io' },
+  { icon: Phone, label: '+1 (415) 823-5670' },
+  { icon: MapPin, label: '350 Market St, Suite 900, San Francisco, CA 94105' },
 ];
 
 const footerLinks = [

@@ -6,5 +6,5 @@
   "frontend/src/components/HeroSection.tsx": "Full-viewport hero section with background image, gradient overlay, animated headline/subheading, dual CTA buttons, stat counters, and a scroll-down indicator.",
   "frontend/src/components/AboutSection.tsx": "Two-column about section featuring an animated orbital logo graphic with stat cards on the left and descriptive copy with checkmark highlights on the right.",
   "frontend/src/components/FeaturesSection.tsx": "Six-card features grid showcasing key capabilities with amber icon badges, hover glow effects, and a bottom CTA linking to the contact section.",
-  "frontend/src/components/ContactFooter.tsx": "Combined contact section with info panel and contact form, plus a full footer with logo, nav links, copyright, and caffeine.ai attribution."
+  "frontend/src/components/ContactFooter.tsx": "Combined contact section and footer component with updated contact details (email: contact@luminary.io, phone: +1 (415) 823-5670, address: 350 Market St, Suite 900, San Francisco, CA 94105), a contact form with submission feedback, social links, footer navigation, copyright, and caffeine.ai attribution."
 }

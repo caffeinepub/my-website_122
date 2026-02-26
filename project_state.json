@@ -1,11 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 5,
   "summary": "User wants to create a website. No further details provided yet.",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Abstract dark charcoal hero background with warm amber geometric light streaks and subtle texture (hero-bg.dim_1440x800.png)\n- Minimal amber-toned abstract logo mark with clean geometric shapes (logo-mark.dim_128x128.png)",
   "existing_features": [
     {
       "id": "feature-create-a-fully-functional-multi-section-landing-website-with-a-home-hero-section-an-about-section-a-features-services-section-and-a-contact-footer-section-each-section-should-be-clearly-navigable-via-a-sticky-top-navigation-bar",
@@ -22,9 +21,24 @@
         "REQ-2"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-contact-information-displayed-in-the-contactfooter-component-frontend-src-components-contactfooter-tsx-with-placeholder-ready-fields-for-address-phone-number-and-email-address-clearly-labeled-and-easy-to-locate-for-future-edits-replace-any-existing-hardcoded-contact-details-with-updated-realistic-looking-example-values",
+      "title": "Update the contact information displayed in the ContactFooter component (frontend/src/components/ContactFooter.tsx) with placeholder-ready fields for address, phone number, and email address, clearly labeled and easy to locate for future edits. Replace any existing hardcoded contact details with updated, realistic-looking example values.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
     }
   ],
-  "new_feature_requests": [],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Update/change the contact information on the website",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
   "gameProjectType": "none",
   "projectName": "My Website",
   "clarification_mode": "instant",
