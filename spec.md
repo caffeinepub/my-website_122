@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Update the contact information displayed in the ContactFooter component with realistic example values for address, phone number, and email address.
+**Goal:** Display the website domain `huzluxe.in` as a visible, clickable link on the HUZLUXE site, styled consistently with the existing dark charcoal and warm amber design system.
 
 **Planned changes:**
-- Replace existing hardcoded contact details in `ContactFooter.tsx` with updated, realistic-looking example values for address, phone number, and email
-- Ensure all contact fields are clearly labeled and easy to locate for future edits
-- Preserve the existing dark charcoal and amber visual theme
+- Add a clickable link (`href="https://huzluxe.in"`) showing `huzluxe.in` in at least one prominent location (e.g., near the navigation logo, in the HeroSection, or in the ContactFooter)
+- Style the domain display using amber-colored text or a badge consistent with the existing design system
 
-**User-visible outcome:** The footer displays up-to-date, realistic contact information with clearly labeled address, phone, and email fields.
+**User-visible outcome:** Visitors can see and click the `huzluxe.in` domain link on the site, opening `https://huzluxe.in` without disrupting the existing layout or branding.

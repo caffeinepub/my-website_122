@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "User wants to create a website. No further details provided yet.",
+  "projectStateVersion": 19,
+  "summary": "User wants to: (1) add back 'Welcome to the Future' tagline, (2) replace 'huzluxe.com' branding with just 'HUZLUXE' across all components, (3) add a contact form with huzzu006@gmail.com as the recipient/destination email, and (4) add/display the website domain 'huzluxe.in' on the site.",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
@@ -29,12 +29,144 @@
         "REQ-3"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-email-address-in-the-contactfooter-component-frontend-src-components-contactfooter-tsx-to-huzzuu006-gmail-com-replacing-the-current-placeholder-email-value",
+      "title": "Update the email address in the ContactFooter component (frontend/src/components/ContactFooter.tsx) to 'huzzuu006@gmail.com', replacing the current placeholder email value.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-phone-number-field-in-the-contactfooter-component-frontend-src-components-contactfooter-tsx-with-a-realistic-placeholder-phone-number-clearly-associated-with-done-by-the-work",
+      "title": "Update the phone number field in the ContactFooter component (frontend/src/components/ContactFooter.tsx) with a realistic placeholder phone number clearly associated with 'Done by the Work'.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-address-field-in-the-contactfooter-component-frontend-src-components-contactfooter-tsx-to-reflect-the-business-name-done-by-the-work-using-a-realistic-looking-example-street-address",
+      "title": "Update the address field in the ContactFooter component (frontend/src/components/ContactFooter.tsx) to reflect the business name 'Done by the Work', using a realistic-looking example street address.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-occurrences-of-the-current-site-brand-name-with-luminary-across-every-frontend-component-and-file-including-the-navigation-bar-logo-title-herosection-headline-and-metadata-references-aboutsection-featuressection-contactfooter-and-the-html-page-title-in-frontend-index-html",
+      "title": "Replace all occurrences of the current site/brand name with 'Luminary' across every frontend component and file, including the Navigation bar logo/title, HeroSection headline and metadata references, AboutSection, FeaturesSection, ContactFooter, and the HTML page title in frontend/index.html.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-huzluxe-as-a-secondary-brand-identifier-or-tagline-displayed-visibly-on-the-site-place-it-in-a-prominent-but-complementary-position-for-example-as-a-sub-brand-label-near-the-navigation-logo-a-stylized-tagline-in-the-herosection-or-a-badge-in-the-footer-styled-consistently-with-the-existing-dark-charcoal-and-warm-amber-design-system",
+      "title": "Add 'huzluxe' as a secondary brand identifier or tagline displayed visibly on the site. Place it in a prominent but complementary position — for example, as a sub-brand label near the Navigation logo, a stylized tagline in the HeroSection, or a badge in the footer — styled consistently with the existing dark charcoal and warm amber design system.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-occurrences-of-luminary-from-every-frontend-component-and-file-this-includes-the-navigation-bar-logo-title-herosection-headline-and-any-metadata-references-aboutsection-body-copy-featuressection-copy-contactfooter-and-the-html-page-title-in-frontend-index-html-where-luminary-appeared-as-the-primary-brand-name-either-replace-it-with-huzluxe-or-remove-it-entirely-if-it-is-redundant-given-the-existing-huzluxe-branding-already-on-the-page",
+      "title": "Remove all occurrences of 'Luminary' from every frontend component and file. This includes: the Navigation bar logo/title, HeroSection headline and any metadata references, AboutSection body copy, FeaturesSection copy, ContactFooter, and the HTML page title in frontend/index.html. Where 'Luminary' appeared as the primary brand name, either replace it with 'huzluxe' or remove it entirely if it is redundant given the existing 'huzluxe' branding already on the page.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-occurrences-of-huzluxe-without-the-domain-suffix-used-as-the-primary-brand-name-with-huzluxe-com-across-every-frontend-component-and-file-including-the-navigation-bar-logo-title-herosection-headline-and-amber-brand-badge-aboutsection-body-copy-and-branded-references-featuressection-copy-contactfooter-branding-and-the-html-page-title-in-frontend-index-html",
+      "title": "Replace all occurrences of 'huzluxe' (without the domain suffix) used as the primary brand name with 'huzluxe.com' across every frontend component and file, including: the Navigation bar logo/title, HeroSection headline and amber brand badge, AboutSection body copy and branded references, FeaturesSection copy, ContactFooter branding, and the HTML page title in frontend/index.html.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-welcome-to-the-future-tagline-text-that-appears-beside-or-near-the-huzluxe-com-brand-name-in-the-herosection-component-frontend-src-components-herosection-tsx-keep-the-main-huzluxe-com-amber-brand-badge-headline-intact-only-remove-the-secondary-welcome-to-the-future-text-string",
+      "title": "Remove the 'Welcome to the Future' tagline/text that appears beside or near the 'huzluxe.com' brand name in the HeroSection component (frontend/src/components/HeroSection.tsx). Keep the main 'huzluxe.com' amber brand badge/headline intact; only remove the secondary 'Welcome to the Future' text string.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-occurrences-of-huzluxe-com-used-as-the-primary-brand-name-with-huzluxe-uppercase-no-domain-suffix-across-every-frontend-component-and-file-including-the-navigation-bar-logo-title-herosection-amber-brand-badge-aboutsection-body-copy-and-branded-references-featuressection-copy-contactfooter-branding-and-the-html-page-title-in-frontend-index-html",
+      "title": "Replace all occurrences of 'huzluxe.com' used as the primary brand name with 'HUZLUXE' (uppercase, no domain suffix) across every frontend component and file, including: the Navigation bar logo/title, HeroSection amber brand badge, AboutSection body copy and branded references, FeaturesSection copy, ContactFooter branding, and the HTML page title in frontend/index.html.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-back-the-welcome-to-the-future-tagline-text-in-the-herosection-component-frontend-src-components-herosection-tsx-displayed-visibly-near-or-alongside-the-huzluxe-brand-badge-styled-consistently-with-the-existing-dark-charcoal-and-warm-amber-design-system",
+      "title": "Add back the 'Welcome to the Future' tagline text in the HeroSection component (frontend/src/components/HeroSection.tsx), displayed visibly near or alongside the 'HUZLUXE' brand badge, styled consistently with the existing dark charcoal and warm amber design system.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-functional-contact-form-to-the-contactfooter-section-frontend-src-components-contactfooter-tsx-that-allows-visitors-to-reach-out-the-form-must-include-fields-for-name-email-and-message-along-with-a-submit-button-display-huzzu006-gmail-com-as-the-contact-email-destination-visibly-in-the-form-or-section-on-submission-open-the-user-s-email-client-mailto-huzzu006-gmail-com-pre-filled-with-the-form-s-subject-and-message-body-or-display-the-contact-email-prominently-as-a-fallback-so-visitors-know-how-to-reach-out",
+      "title": "Add a functional contact form to the ContactFooter section (frontend/src/components/ContactFooter.tsx) that allows visitors to reach out. The form must include fields for name, email, and message, along with a submit button. Display 'huzzu006@gmail.com' as the contact email destination visibly in the form or section. On submission, open the user's email client (mailto:huzzu006@gmail.com) pre-filled with the form's subject and message body, or display the contact email prominently as a fallback so visitors know how to reach out.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-website-domain-huzluxe-in-visibly-on-the-site-add-it-as-a-clickable-link-href-https-huzluxe-in-in-a-prominent-but-complementary-position-for-example-as-a-domain-badge-near-the-navigation-logo-a-styled-link-in-the-herosection-alongside-the-huzluxe-brand-badge-or-in-the-contactfooter-alongside-the-existing-contact-details-style-it-consistently-with-the-existing-dark-charcoal-and-warm-amber-design-system-e-g-amber-colored-text-or-badge-ensure-it-appears-in-at-least-one-clearly-visible-location",
+      "title": "Display the website domain 'huzluxe.in' visibly on the site. Add it as a clickable link (href='https://huzluxe.in') in a prominent but complementary position — for example, as a domain badge near the Navigation logo, a styled link in the HeroSection alongside the 'HUZLUXE' brand badge, or in the ContactFooter alongside the existing contact details. Style it consistently with the existing dark charcoal and warm amber design system (e.g., amber-colored text or badge). Ensure it appears in at least one clearly visible location.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
     {
-      "id": "AR-1",
-      "summary": "Update/change the contact information on the website",
+      "id": "AR-2",
+      "summary": "Update contact info with email huzzuu006@gmail.com, phone number, and address for 'Done by the Work'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add 'huzluxe' branding/text to the site",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Remove 'Luminary' brand name from the site",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add back 'Welcome to the Future' tagline/text near the HUZLUXE brand name",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Replace 'huzluxe.com' branding with just 'HUZLUXE' across all components and files",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add a contact form so visitors can reach out, with huzzu006@gmail.com as the contact email",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add/display website domain 'huzluxe.in' on the site",
       "reqIds": [],
       "status": "pending"
     }

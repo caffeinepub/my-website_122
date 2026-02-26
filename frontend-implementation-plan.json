@@ -1,22 +1,27 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update contact information in ContactFooter",
+  "title": "Add 'huzluxe.in' website domain display to the site",
   "requirements": [
     {
-      "id": "REQ-3",
-      "summary": "Update ContactFooter component with placeholder-ready contact details including address, phone number, and email address",
+      "id": "REQ-15",
+      "summary": "Display the website domain 'huzluxe.in' as a clickable link in a prominent location styled with the dark charcoal and warm amber design system",
       "acceptanceCriteria": [
-        "The ContactFooter component displays updated contact details including an address, phone number, and email address.",
-        "All contact fields are clearly labeled and visible in the contact info panel.",
-        "No outdated or placeholder contact values remain from the previous implementation.",
-        "The visual styling and layout of the ContactFooter remain consistent with the existing dark charcoal and amber theme."
+        "The text 'huzluxe.in' is visible on the site in at least one location",
+        "The domain is rendered as a clickable link pointing to https://huzluxe.in",
+        "The domain display is styled consistently with the dark charcoal and warm amber design system",
+        "The placement does not disrupt existing layout or navigation"
       ],
       "file_operations": [
         {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Add a domain badge displaying 'huzluxe.in' as a clickable link next to the HUZLUXE logo in the navigation bar. Style it with amber-colored text and a subtle border to complement the existing dark charcoal background. Ensure the badge is visible on both desktop and mobile viewports and maintains the existing navigation scroll behavior and active section highlighting."
+        },
+        {
           "path": "frontend/src/components/ContactFooter.tsx",
           "operation": "modify",
-          "description": "Replace existing hardcoded contact details in the contact info panel with updated, realistic-looking placeholder values for address, phone number, and email address. Ensure all contact fields are clearly labeled with descriptive text (e.g., 'Address:', 'Phone:', 'Email:') and maintain the existing dark charcoal and amber visual theme. Preserve the current component structure, form functionality, social links, and site navigation links without modification."
+          "description": "Add the 'huzluxe.in' domain as a clickable link in the contact information section alongside the existing contact details (email, phone, location). Style it consistently with the amber accent color and include an appropriate icon (e.g., globe or link icon). Ensure it appears in the contact info cards grid without disrupting the existing mailto functionality or form layout."
         }
       ]
     }

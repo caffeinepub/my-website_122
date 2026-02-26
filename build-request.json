@@ -1,37 +1,38 @@
 {
   "kind": "build_request",
-  "title": "Update contact information in ContactFooter",
-  "projectName": "Landing Site",
+  "title": "Add 'huzluxe.in' website domain display to the site",
+  "projectName": "HUZLUXE",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-3",
-      "text": "Update the contact information displayed in the ContactFooter component (frontend/src/components/ContactFooter.tsx) with placeholder-ready fields for address, phone number, and email address, clearly labeled and easy to locate for future edits. Replace any existing hardcoded contact details with updated, realistic-looking example values.",
+      "id": "REQ-15",
+      "text": "Display the website domain 'huzluxe.in' visibly on the site. Add it as a clickable link (href='https://huzluxe.in') in a prominent but complementary position — for example, as a domain badge near the Navigation logo, a styled link in the HeroSection alongside the 'HUZLUXE' brand badge, or in the ContactFooter alongside the existing contact details. Style it consistently with the existing dark charcoal and warm amber design system (e.g., amber-colored text or badge). Ensure it appears in at least one clearly visible location.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-7"
+          "msg-1"
         ],
         "quotes": [
-          "change the contact info"
+          "add website domain as huzluxe.in"
         ]
       },
       "acceptanceCriteria": [
-        "The ContactFooter component displays updated contact details including an address, phone number, and email address.",
-        "All contact fields are clearly labeled and visible in the contact info panel.",
-        "No outdated or placeholder contact values remain from the previous implementation.",
-        "The visual styling and layout of the ContactFooter remain consistent with the existing dark charcoal and amber theme."
+        "The text 'huzluxe.in' is visible on the site in at least one location",
+        "The domain is rendered as a clickable link pointing to https://huzluxe.in",
+        "The domain display is styled consistently with the dark charcoal and warm amber design system",
+        "The placement does not disrupt existing layout or navigation"
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/main.tsx.",
-    "Preserve the existing visual theme (dark charcoal + warm amber palette)."
+    "Do not change existing branding — 'HUZLUXE' and 'Welcome to the Future' must remain intact",
+    "Do not modify files listed in frontend.immutablePaths",
+    "Do not alter the contact form or mailto:huzzu006@gmail.com functionality"
   ],
   "nonGoals": [
-    "Adding a backend contact form submission handler.",
-    "Changing the layout or structure of the ContactFooter beyond updating contact details.",
-    "Adding new sections or features to the site."
+    "Registering or configuring the huzluxe.in domain",
+    "Changing the primary brand name",
+    "Modifying backend logic"
   ],
   "imageRequirements": {
     "required": [],

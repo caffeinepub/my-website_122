@@ -34,10 +34,18 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber/30 bg-amber/10 text-amber text-xs font-semibold tracking-widest uppercase mb-8 animate-fade-in">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+          {/* Welcome to the Future tagline */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber/40 bg-amber/10 text-amber text-xs font-bold tracking-[0.2em] uppercase mb-3 animate-fade-in">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber" />
             Welcome to the Future
+            <span className="w-1.5 h-1.5 rounded-full bg-amber" />
+          </div>
+
+          {/* HUZLUXE brand badge */}
+          <div className="mb-8 animate-fade-in">
+            <span className="font-display text-2xl font-800 tracking-[0.3em] text-amber uppercase">
+              HUZLUXE
+            </span>
           </div>
 
           {/* Headline */}
@@ -48,13 +56,19 @@ export default function HeroSection() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: '0.1s', opacity: 0 }}>
+          <p
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up"
+            style={{ animationDelay: '0.1s', opacity: 0 }}
+          >
             We craft digital experiences that inspire, engage, and deliver results.
             Elevate your vision with cutting-edge design and technology.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
+            style={{ animationDelay: '0.2s', opacity: 0 }}
+          >
             <button
               onClick={handleCTA}
               className="group flex items-center gap-2 px-8 py-4 bg-amber text-charcoal-deep font-semibold rounded-xl hover:bg-amber-light transition-all duration-300 shadow-amber-md hover:shadow-amber-lg hover:-translate-y-0.5"
@@ -71,7 +85,10 @@ export default function HeroSection() {
           </div>
 
           {/* Stats row */}
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-up" style={{ animationDelay: '0.3s', opacity: 0 }}>
+          <div
+            className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto animate-fade-up"
+            style={{ animationDelay: '0.3s', opacity: 0 }}
+          >
             {[
               { value: '500+', label: 'Projects' },
               { value: '98%', label: 'Satisfaction' },

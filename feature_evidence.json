@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-contact-information-displayed-in-the-contactfooter-component-frontend-src-components-contactfooter-tsx-with-placeholder-ready-fields-for-address-phone-number-and-email-address-clearly-labeled-and-easy-to-locate-for-future-edits-replace-any-existing-hardcoded-contact-details-with-updated-realistic-looking-example-values",
-      "featureTitle": "Update the contact information displayed in the ContactFooter component (frontend/src/components/ContactFooter.tsx) with placeholder-ready fields for address, phone number, and email address, clearly labeled and easy to locate for future edits. Replace any existing hardcoded contact details with updated, realistic-looking example values.",
+      "featureId": "feature-display-the-website-domain-huzluxe-in-visibly-on-the-site-add-it-as-a-clickable-link-href-https-huzluxe-in-in-a-prominent-but-complementary-position-for-example-as-a-domain-badge-near-the-navigation-logo-a-styled-link-in-the-herosection-alongside-the-huzluxe-brand-badge-or-in-the-contactfooter-alongside-the-existing-contact-details-style-it-consistently-with-the-existing-dark-charcoal-and-warm-amber-design-system-e-g-amber-colored-text-or-badge-ensure-it-appears-in-at-least-one-clearly-visible-location",
+      "featureTitle": "Display the website domain 'huzluxe.in' visibly on the site. Add it as a clickable link (href='https://huzluxe.in') in a prominent but complementary position — for example, as a domain badge near the Navigation logo, a styled link in the HeroSection alongside the 'HUZLUXE' brand badge, or in the ContactFooter alongside the existing contact details. Style it consistently with the existing dark charcoal and warm amber design system (e.g., amber-colored text or badge). Ensure it appears in at least one clearly visible location.",
       "files": [
-        "frontend/src/components/ContactFooter.tsx"
+        "frontend/src/components/ContactFooter.tsx",
+        "frontend/src/components/Navigation.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,7 +16,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-3"
+        "REQ-15"
       ],
       "confidence": "high"
     }

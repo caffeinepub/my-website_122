@@ -30,7 +30,7 @@ export default function AboutSection() {
                         <div className="w-16 h-16 rounded-full bg-amber/20 border-2 border-amber/50 flex items-center justify-center shadow-amber-sm">
                           <img
                             src="/assets/generated/logo-mark.dim_128x128.png"
-                            alt="Luminary"
+                            alt="HUZLUXE"
                             className="w-10 h-10 object-contain"
                           />
                         </div>
@@ -84,7 +84,7 @@ export default function AboutSection() {
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               Founded on the belief that great design and powerful technology should work hand in hand,
-              Luminary has been helping businesses transform their digital presence for over a decade.
+              HUZLUXE has been helping businesses transform their digital presence for over a decade.
             </p>
 
             <p className="text-muted-foreground leading-relaxed mb-8">

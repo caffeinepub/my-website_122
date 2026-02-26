@@ -1,37 +1,43 @@
-import { Mail, Phone, MapPin, Heart } from 'lucide-react';
-import { SiX, SiLinkedin, SiGithub, SiInstagram } from 'react-icons/si';
 import { useState } from 'react';
+import { Mail, MapPin, Phone, Send, Heart, Globe } from 'lucide-react';
+import { SiInstagram, SiX, SiLinkedin } from 'react-icons/si';
 
-const socialLinks = [
-  { icon: SiX, href: '#', label: 'X (Twitter)' },
-  { icon: SiLinkedin, href: '#', label: 'LinkedIn' },
-  { icon: SiGithub, href: '#', label: 'GitHub' },
-  { icon: SiInstagram, href: '#', label: 'Instagram' },
-];
+const CONTACT_EMAIL = 'huzzu006@gmail.com';
+const WEBSITE_DOMAIN = 'huzluxe.in';
+const WEBSITE_URL = 'https://huzluxe.in';
 
-const contactInfo = [
-  { icon: Mail, label: 'contact@luminary.io' },
-  { icon: Phone, label: '+1 (415) 823-5670' },
-  { icon: MapPin, label: '350 Market St, Suite 900, San Francisco, CA 94105' },
-];
-
-const footerLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Features', href: '#features' },
-  { label: 'Contact', href: '#contact' },
-];
+interface FormState {
+  name: string;
+  email: string;
+  message: string;
+}
 
 export default function ContactFooter() {
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`Message from ${form.name} via HUZLUXE`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
     setSubmitted(true);
-    setFormState({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 4000);
   };
+
+  const isFormValid = form.name.trim() && form.email.trim() && form.message.trim();
+
+  const footerLinks = [
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Features', href: '#features' },
+    { label: 'Contact', href: '#contact' },
+  ];
 
   const handleNavClick = (href: string) => {
     const id = href.replace('#', '');
@@ -39,117 +45,204 @@ export default function ContactFooter() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const appId = encodeURIComponent(window.location.hostname || 'luminary-website');
-
   return (
     <>
       {/* Contact Section */}
       <section id="contact" className="py-24 md:py-32 bg-charcoal-deep relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 section-divider" />
-        <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-amber/4 blur-3xl pointer-events-none" />
+        {/* Background decoration */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-amber/4 blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left: Info */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber/30 bg-amber/10 text-amber text-xs font-semibold tracking-widest uppercase mb-6">
-                Get In Touch
-              </div>
-              <h2 className="font-display text-4xl md:text-5xl font-700 leading-tight tracking-tight mb-6">
-                Let's Build Something{' '}
-                <span className="gradient-text">Together</span>
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-                Have a project in mind? We'd love to hear about it. Send us a message and
-                we'll get back to you within 24 hours.
-              </p>
+          {/* Section header */}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber/30 bg-amber/10 text-amber text-xs font-semibold tracking-widest uppercase mb-6">
+              Get In Touch
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-700 leading-tight tracking-tight mb-4">
+              Let's Build Something{' '}
+              <span className="gradient-text">Together</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Have a project in mind or just want to say hello? We'd love to hear from you.
+              Reach out and let's start a conversation.
+            </p>
+          </div>
 
-              {/* Contact details */}
-              <div className="space-y-5 mb-10">
-                {contactInfo.map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-amber/10 border border-amber/20 flex items-center justify-center flex-shrink-0">
-                      <Icon size={16} className="text-amber" />
-                    </div>
-                    <span className="text-foreground text-sm font-medium">{label}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Contact Info */}
+            <div className="flex flex-col gap-8">
+              <div>
+                <h3 className="font-display text-2xl font-700 text-foreground mb-2">
+                  Contact HUZLUXE
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  We're here to help bring your vision to life. Send us a message and we'll get back to you as soon as possible.
+                </p>
+              </div>
+
+              <div className="space-y-5">
+                {/* Website */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center flex-shrink-0">
+                    <Globe size={18} className="text-amber" />
                   </div>
-                ))}
+                  <div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Website</div>
+                    <a
+                      href={WEBSITE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground font-medium hover:text-amber transition-colors duration-200"
+                    >
+                      {WEBSITE_DOMAIN}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center flex-shrink-0">
+                    <Mail size={18} className="text-amber" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Email</div>
+                    <a
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      className="text-foreground font-medium hover:text-amber transition-colors duration-200"
+                    >
+                      {CONTACT_EMAIL}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin size={18} className="text-amber" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Location</div>
+                    <span className="text-foreground font-medium">Available Worldwide</span>
+                  </div>
+                </div>
+
+                {/* Response Time */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center flex-shrink-0">
+                    <Phone size={18} className="text-amber" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Response Time</div>
+                    <span className="text-foreground font-medium">Within 24 hours</span>
+                  </div>
+                </div>
               </div>
 
               {/* Social links */}
-              <div className="flex items-center gap-3">
-                {socialLinks.map(({ icon: Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    aria-label={label}
-                    className="w-10 h-10 rounded-lg bg-charcoal-light border border-border flex items-center justify-center text-muted-foreground hover:text-amber hover:border-amber/40 hover:bg-amber/10 transition-all duration-200"
-                  >
-                    <Icon size={16} />
-                  </a>
-                ))}
+              <div>
+                <div className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Follow Us</div>
+                <div className="flex items-center gap-3">
+                  {[
+                    { icon: SiX, label: 'X (Twitter)', href: '#' },
+                    { icon: SiInstagram, label: 'Instagram', href: '#' },
+                    { icon: SiLinkedin, label: 'LinkedIn', href: '#' },
+                  ].map(({ icon: Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      aria-label={label}
+                      className="w-10 h-10 rounded-xl bg-charcoal-light border border-border hover:border-amber/40 hover:bg-amber/10 flex items-center justify-center text-muted-foreground hover:text-amber transition-all duration-200"
+                    >
+                      <Icon size={16} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Right: Form */}
-            <div className="bg-card rounded-2xl p-8 border border-border shadow-card">
+            {/* Contact Form */}
+            <div className="bg-charcoal-mid rounded-2xl border border-border p-8 shadow-card">
               {submitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                  <div className="w-16 h-16 rounded-full bg-amber/20 border-2 border-amber/40 flex items-center justify-center mb-4 shadow-amber-sm">
-                    <Mail size={28} className="text-amber" />
+                <div className="flex flex-col items-center justify-center h-full text-center py-8">
+                  <div className="w-16 h-16 rounded-full bg-amber/10 border border-amber/30 flex items-center justify-center mb-4">
+                    <Send size={24} className="text-amber" />
                   </div>
-                  <h3 className="font-display text-xl font-700 text-foreground mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Thanks for reaching out. We'll be in touch soon.
+                  <h4 className="font-display text-xl font-700 text-foreground mb-2">Message Sent!</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                    Your email client should have opened. We'll get back to you at{' '}
+                    <span className="text-amber">{CONTACT_EMAIL}</span> soon.
                   </p>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="px-5 py-2 text-sm font-semibold bg-amber text-charcoal-deep rounded-lg hover:bg-amber-light transition-all duration-200"
+                  >
+                    Send Another
+                  </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="name" className="block text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
                       Your Name
                     </label>
                     <input
+                      id="name"
+                      name="name"
                       type="text"
                       required
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      value={form.name}
+                      onChange={handleChange}
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 bg-charcoal-light border border-border rounded-xl text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-amber/50 focus:ring-1 focus:ring-amber/30 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl bg-charcoal-light border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber/50 focus:ring-1 focus:ring-amber/30 transition-all duration-200 text-sm"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Email Address
+                    <label htmlFor="email" className="block text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
+                      Your Email
                     </label>
                     <input
+                      id="email"
+                      name="email"
                       type="email"
                       required
-                      value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      placeholder="john@example.com"
-                      className="w-full px-4 py-3 bg-charcoal-light border border-border rounded-xl text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-amber/50 focus:ring-1 focus:ring-amber/30 transition-all duration-200"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                      className="w-full px-4 py-3 rounded-xl bg-charcoal-light border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber/50 focus:ring-1 focus:ring-amber/30 transition-all duration-200 text-sm"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
                       Message
                     </label>
                     <textarea
+                      id="message"
+                      name="message"
                       required
                       rows={5}
-                      value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      placeholder="Tell us about your project..."
-                      className="w-full px-4 py-3 bg-charcoal-light border border-border rounded-xl text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-amber/50 focus:ring-1 focus:ring-amber/30 transition-all duration-200 resize-none"
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about your project or inquiry..."
+                      className="w-full px-4 py-3 rounded-xl bg-charcoal-light border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-amber/50 focus:ring-1 focus:ring-amber/30 transition-all duration-200 text-sm resize-none"
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full py-3.5 bg-amber text-charcoal-deep font-semibold rounded-xl hover:bg-amber-light transition-all duration-200 shadow-amber-sm hover:shadow-amber-md text-sm"
-                  >
-                    Send Message
-                  </button>
+
+                  <div className="flex items-center justify-between gap-4 pt-1">
+                    <span className="text-xs text-muted-foreground">
+                      Sends to{' '}
+                      <span className="text-amber font-medium">{CONTACT_EMAIL}</span>
+                    </span>
+                    <button
+                      type="submit"
+                      disabled={!isFormValid}
+                      className="flex items-center gap-2 px-6 py-3 bg-amber text-charcoal-deep font-semibold rounded-xl hover:bg-amber-light transition-all duration-200 shadow-amber-sm hover:shadow-amber-md disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                    >
+                      Send Message
+                      <Send size={15} />
+                    </button>
+                  </div>
                 </form>
               )}
             </div>
@@ -159,50 +252,97 @@ export default function ContactFooter() {
 
       {/* Footer */}
       <footer className="bg-charcoal-deep border-t border-border">
-        <div className="container mx-auto px-6 lg:px-8 py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Logo + brand */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg overflow-hidden ring-1 ring-amber/30">
-                <img
-                  src="/assets/generated/logo-mark.dim_128x128.png"
-                  alt="Luminary"
-                  className="w-full h-full object-cover"
-                />
+        <div className="container mx-auto px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-lg overflow-hidden ring-1 ring-amber/30">
+                  <img
+                    src="/assets/generated/logo-mark.dim_128x128.png"
+                    alt="HUZLUXE"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="font-display font-700 text-base tracking-tight text-amber">
+                  HUZLUXE
+                </span>
               </div>
-              <span className="font-display font-700 text-foreground">Luminary</span>
-            </div>
-
-            {/* Nav links */}
-            <nav className="flex items-center gap-6">
-              {footerLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-xs text-muted-foreground hover:text-amber transition-colors duration-200"
-                >
-                  {link.label}
-                </button>
-              ))}
-            </nav>
-
-            {/* Copyright */}
-            <p className="text-xs text-muted-foreground text-center md:text-right">
-              © {new Date().getFullYear()} Luminary. All rights reserved.
-            </p>
-          </div>
-
-          {/* Attribution */}
-          <div className="mt-6 pt-6 border-t border-border/50 text-center">
-            <p className="text-xs text-muted-foreground flex items-center justify-center gap-1.5">
-              Built with{' '}
-              <Heart size={12} className="text-amber fill-amber" />{' '}
-              using{' '}
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mb-3">
+                Crafting extraordinary digital experiences that inspire and deliver results.
+              </p>
               <a
-                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appId}`}
+                href={WEBSITE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber hover:text-amber-light transition-colors duration-200 font-medium"
+                className="inline-flex items-center gap-1.5 text-sm text-amber/70 hover:text-amber transition-colors duration-200"
+              >
+                <Globe size={13} />
+                {WEBSITE_DOMAIN}
+              </a>
+            </div>
+
+            {/* Navigation */}
+            <div>
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
+                Navigation
+              </div>
+              <ul className="space-y-2">
+                {footerLinks.map((link) => (
+                  <li key={link.href}>
+                    <button
+                      onClick={() => handleNavClick(link.href)}
+                      className="text-sm text-muted-foreground hover:text-amber transition-colors duration-200"
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">
+                Contact
+              </div>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href={WEBSITE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-amber transition-colors duration-200"
+                  >
+                    <Globe size={14} className="text-amber/60" />
+                    {WEBSITE_DOMAIN}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-amber transition-colors duration-200"
+                  >
+                    <Mail size={14} className="text-amber/60" />
+                    {CONTACT_EMAIL}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} HUZLUXE. All rights reserved.
+            </p>
+            <p className="text-xs text-muted-foreground flex items-center gap-1">
+              Built with <Heart size={11} className="text-amber fill-amber" /> using{' '}
+              <a
+                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'huzluxe')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber hover:text-amber-light transition-colors duration-200"
               >
                 caffeine.ai
               </a>

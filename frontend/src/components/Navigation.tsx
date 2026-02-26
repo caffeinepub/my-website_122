@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -65,9 +65,21 @@ export default function Navigation() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-display font-700 text-lg tracking-tight text-foreground group-hover:text-amber transition-colors duration-200">
-              Luminary
-            </span>
+            <div className="flex flex-col items-start leading-none gap-0.5">
+              <span className="font-display font-700 text-lg tracking-tight text-amber group-hover:text-amber-light transition-colors duration-200">
+                HUZLUXE
+              </span>
+              <a
+                href="https://huzluxe.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1 text-[10px] text-amber/60 hover:text-amber transition-colors duration-200 leading-none"
+              >
+                <Globe size={9} />
+                huzluxe.in
+              </a>
+            </div>
           </button>
 
           {/* Desktop Nav */}
@@ -94,7 +106,16 @@ export default function Navigation() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://huzluxe.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-amber border border-amber/30 bg-amber/10 rounded-lg hover:bg-amber/20 hover:border-amber/50 transition-all duration-200"
+            >
+              <Globe size={12} />
+              huzluxe.in
+            </a>
             <button
               onClick={() => handleNavClick('#contact')}
               className="px-5 py-2 text-sm font-semibold bg-amber text-charcoal-deep rounded-lg hover:bg-amber-light transition-all duration-200 shadow-amber-sm hover:shadow-amber-md"
@@ -117,7 +138,7 @@ export default function Navigation() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden ${
-          mobileOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="nav-blur bg-charcoal-deep/95 border-t border-border px-6 py-4 flex flex-col gap-1">
@@ -137,9 +158,18 @@ export default function Navigation() {
               </button>
             );
           })}
+          <a
+            href="https://huzluxe.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-amber border border-amber/30 bg-amber/10 rounded-lg hover:bg-amber/20 transition-all duration-200"
+          >
+            <Globe size={14} />
+            huzluxe.in
+          </a>
           <button
             onClick={() => handleNavClick('#contact')}
-            className="mt-2 px-4 py-3 text-sm font-semibold bg-amber text-charcoal-deep rounded-lg hover:bg-amber-light transition-all duration-200 text-center"
+            className="mt-1 px-4 py-3 text-sm font-semibold bg-amber text-charcoal-deep rounded-lg hover:bg-amber-light transition-all duration-200 text-center"
           >
             Get Started
           </button>
