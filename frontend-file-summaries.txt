@@ -1,0 +1,10 @@
+{
+  "frontend/src/index.css": "Global styles defining the dark charcoal + warm amber OKLCH color palette, Inter/Syne font imports, and utility classes for gradients, glows, card shadows, and nav blur effects.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Inter/Syne font families, amber and charcoal custom color tokens, custom border radii, amber glow box shadows, and fade-up/fade-in keyframe animations.",
+  "frontend/src/App.tsx": "Root app component that composes the full single-page layout by rendering Navigation, HeroSection, AboutSection, FeaturesSection, and ContactFooter in order.",
+  "frontend/src/components/Navigation.tsx": "Sticky top navigation bar with logo, smooth-scroll anchor links, active section highlighting, mobile hamburger menu, and a \"Get Started\" CTA button.",
+  "frontend/src/components/HeroSection.tsx": "Full-viewport hero section with background image, gradient overlay, animated headline/subheading, dual CTA buttons, stat counters, and a scroll-down indicator.",
+  "frontend/src/components/AboutSection.tsx": "Two-column about section featuring an animated orbital logo graphic with stat cards on the left and descriptive copy with checkmark highlights on the right.",
+  "frontend/src/components/FeaturesSection.tsx": "Six-card features grid showcasing key capabilities with amber icon badges, hover glow effects, and a bottom CTA linking to the contact section.",
+  "frontend/src/components/ContactFooter.tsx": "Combined contact section with info panel and contact form, plus a full footer with logo, nav links, copyright, and caffeine.ai attribution."
+}

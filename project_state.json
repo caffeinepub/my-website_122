@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "User wants to create a website. No further details provided yet.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Abstract dark charcoal hero background with warm amber geometric light streaks and subtle texture (hero-bg.dim_1440x800.png)\n- Minimal amber-toned abstract logo mark with clean geometric shapes (logo-mark.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-fully-functional-multi-section-landing-website-with-a-home-hero-section-an-about-section-a-features-services-section-and-a-contact-footer-section-each-section-should-be-clearly-navigable-via-a-sticky-top-navigation-bar",
+      "title": "Create a fully functional multi-section landing website with a home hero section, an about section, a features/services section, and a contact/footer section. Each section should be clearly navigable via a sticky top navigation bar.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-modern-visual-theme-across-the-entire-site-using-a-dark-charcoal-and-warm-amber-color-palette-clean-sans-serif-typography-generous-whitespace-and-subtle-card-shadows-the-style-should-feel-professional-and-contemporary-with-consistent-spacing-and-hover-interactions-on-interactive-elements",
+      "title": "Apply a bold, modern visual theme across the entire site using a dark charcoal and warm amber color palette, clean sans-serif typography, generous whitespace, and subtle card shadows. The style should feel professional and contemporary, with consistent spacing and hover interactions on interactive elements.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [],
+  "gameProjectType": "none",
+  "projectName": "My Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
